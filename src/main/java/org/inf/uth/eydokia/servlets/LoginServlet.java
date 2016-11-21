@@ -22,12 +22,25 @@ public class LoginServlet extends HttpServlet {
          Uthldap ldap = new Uthldap(username,pass);
 
         if(ldap.auth()){
-            out.println("<html><body>Autheticated Youre name is:" + ldap.getName() +"</body></html>");
-
+            out.println("<html><body>congrats ldap.getName()</body></html>");
+            request.getSession().setAttribute("user", username);   
+                if (request.getParameter("remember") != null)
+                {
+                    Cookie userCookie = new Cookie(COOKIE_NAME_USER, 
+                            String.format("%s%s%s", 
+                                    username,
+                                    COOKIE_DELIM,
+                                    pass));
+                    
+                    userCookie.setMaxAge(60 * 60 * 24 * 30);    // about a month
+                    
+                    response.addCookie(userCookie);
+                }
         }
         else{
             out.println("<html><body>Authetication failed</body></html>");
         }
+  
     } 
 }
     
