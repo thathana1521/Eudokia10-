@@ -3,7 +3,7 @@ var acc = document.getElementsByClassName("accordion");
 var i;
 
 
-document.body.style.backgroundColor = "lightblue";
+document.body.style.backgroundColor = "#9EC0FA";
 
 for (i = 0; i < acc.length; i++) {
     acc[i].onclick = function(){

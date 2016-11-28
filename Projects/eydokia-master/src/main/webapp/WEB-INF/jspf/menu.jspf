@@ -1,0 +1,19 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+  
+<link type="text/css" rel="stylesheet" 
+              href="${pageContext.request.contextPath}/css/Menu.css" />
+
+<ul class="topnav" id="myTopnav">
+    <li><a href="">Home</a></li>
+    <li><a href="#calendar">Calendar</a></li>
+    <li><a href="register">Register</a></li>
+    <li><a href="login">Login</a></li>
+    <li class="icon">
+        <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+    </li>
+</ul>
+<script src="${pageContext.request.contextPath}/js/menu/menu.js"></script>
+
+

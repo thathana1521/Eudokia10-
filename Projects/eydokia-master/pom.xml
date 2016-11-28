@@ -18,6 +18,11 @@
     
     <dependencies>
         <dependency>
+            <groupId>group.id</groupId>
+            <artifactId>javaplanner-1.5.id</artifactId>
+            <version>1.5</version>
+        </dependency>
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>

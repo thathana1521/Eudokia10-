@@ -11,25 +11,14 @@
     
     <head>
         
-        <link rel="stylesheet" type="text/css" href=${pageContext.request.contextPath}"mystyle.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>EYDOKIA - login or register</title>
-        <link type="text/css" rel="stylesheet" 
-              href="${pageContext.request.contextPath}/css/Menu.css" />
+        
     </head>
     
     <body>
 
-        <ul class="topnav" id="myTopnav">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#calendar">Calendar</a></li>
-            <li><a href="#register">Register</a></li>
-            <li><a href="#login">Login</a></li>
-            <li class="icon">
-                <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
-            </li>
-        </ul>
-        <script src="${pageContext.request.contextPath}/js/menu/menu.js"></script>
+        <%@ include file="/WEB-INF/jspf/menu.jspf" %>
         
         <%@ include file="/WEB-INF/jspf/header.jspf" %>
         <h2 class="error-msg">${requestScope.errorMsg}</h2>
@@ -48,15 +37,5 @@
             </fieldset>
         </form>
         
-        <div class="vertical-line"></div>
-        <h1>Login:</h1>
-        <form action="${pageContext.request.contextPath}/login" method="post">
-            <fieldset>
-                <input type="text" name="username" placeholder="Username" />
-                <input type="password" name="password" placeholder="Password" />
-                <input type="checkbox" name="remember" />Remember me?
-                <input type="submit" name="login" value="Login" />
-            </fieldset>
-        </form>
     </body>
 </html>

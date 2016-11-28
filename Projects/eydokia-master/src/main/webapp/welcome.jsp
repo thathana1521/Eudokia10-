@@ -10,10 +10,12 @@
         <title>Eydokia</title>
         <link type="text/css" rel="stylesheet" 
               href="${pageContext.request.contextPath}/css/Accordion.css" />
+        
        
     </head>
     <body>
-        <img src='Images/ece_logo_el.png'/>
+        
+        <%@ include file="/WEB-INF/jspf/menu.jspf" %>
        
         <h1>Welcome to Eudokia!</h1>
         
