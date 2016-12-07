@@ -16,7 +16,7 @@
     <body>
         
         <%@ include file="/WEB-INF/jspf/menu.jspf" %>
-       
+        <%@ include file="/WEB-INF/jspf/header.jspf" %>
         <h1>Welcome to Eudokia!</h1>
         
         <button class="accordion">Aithousa A</button>

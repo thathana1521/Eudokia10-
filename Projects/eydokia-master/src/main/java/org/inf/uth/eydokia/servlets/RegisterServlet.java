@@ -43,7 +43,7 @@ public class RegisterServlet extends HttpServlet
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException 
     {                
-        request.getRequestDispatcher("/register_or_login.jsp")
+        request.getRequestDispatcher("/login_or_register.jsp")
                 .forward(request, response);
     }
 
@@ -58,13 +58,13 @@ public class RegisterServlet extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String username =   request.getParameter("username");
-        String email =      request.getParameter("email");
-        String password =   request.getParameter("password");
-        String _password =  request.getParameter("_password");
-        String fullName =  request.getParameter("full_name");
+        String username =   request.getParameter("usernamesignup");
+        String email =      request.getParameter("emailsignup");
+        String password =   request.getParameter("passwordsignup");
+        String _password =  request.getParameter("passwordsignup_confirm");
+        String fullName =  request.getParameter("fullnamesignup");
         String phone =      request.getParameter("phone");
-        String extraInfo =  request.getParameter("extra_info");
+        String extraInfo =  request.getParameter("infosignup");
         
         try (Connection conn = mDataSource.getConnection())
         {
@@ -119,7 +119,7 @@ public class RegisterServlet extends HttpServlet
             
             if (fullName == null || fullName.isEmpty())
             {
-                throw new Exception("Please fill you full name");
+                throw new Exception("Please fill your full name");
             }
             user.setFullName(fullName);
             user.setPhone(phone);
@@ -132,7 +132,7 @@ public class RegisterServlet extends HttpServlet
         catch (Exception e) 
         {
             request.setAttribute("errorMsg", e.getMessage());
-            request.getRequestDispatcher("/register_or_login.jsp")
+            request.getRequestDispatcher("/login_or_register.jsp")
                     .forward(request, response);
         }
     }

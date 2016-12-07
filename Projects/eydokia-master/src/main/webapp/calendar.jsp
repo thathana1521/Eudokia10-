@@ -9,6 +9,7 @@
               href="${pageContext.request.contextPath}/css/main.css" />
     </head>
     <body>
+        <%@ include file="/WEB-INF/jspf/menu.jspf" %>
         <%@ include file="/WEB-INF/jspf/header.jspf" %>
         <%@ include file="/WEB-INF/jspf/date_entries.jspf" %>
         <%@ include file="/WEB-INF/jspf/calendar_widget.jspf" %>

@@ -14,10 +14,8 @@
 </h1>
     
 <ul>
-    <li><a href="${path}/calendar">View calendar</a></li>
     <c:if test="${logged}">
         <li><a href="${path}/profile?username=${sessionScope.user.username}">My requests</a></li>
-        <li><a href="${path}/book_room">Book a room</a></li>
         <c:if test="${sessionScope.user.roleId >= initParam.admin_role_id}">
             <li><a href="${path}/moderate">View pending requests</a></li>
         </c:if> 

@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException 
     {
-        request.getRequestDispatcher("/login.jsp").forward(request, response);
+        request.getRequestDispatcher("/login_or_register.jsp").forward(request, response);
     }
 
     /**
@@ -86,13 +86,13 @@ public class LoginServlet extends HttpServlet
             }
             
             request.setAttribute("errorMsg", msg);
-            request.getRequestDispatcher("/login.jsp")
+            request.getRequestDispatcher("/login_or_register.jsp")
                     .forward(request, response);
         }
         catch (Exception e)
         {
             request.setAttribute("errorMsg", e.getMessage());
-            request.getRequestDispatcher("/login.jsp")
+            request.getRequestDispatcher("/login_or_register.jsp")
                     .forward(request, response);
         }        
     }

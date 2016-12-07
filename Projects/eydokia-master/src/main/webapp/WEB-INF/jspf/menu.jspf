@@ -6,10 +6,10 @@
               href="${pageContext.request.contextPath}/css/Menu.css" />
 
 <ul class="topnav" id="myTopnav">
-    <li><a href="">Home</a></li>
-    <li><a href="#calendar">Calendar</a></li>
-    <li><a href="register">Register</a></li>
+    <li><a href="welcome.jsp">Home</a></li>
+    <li><a href="calendar">Calendar</a></li>
     <li><a href="login">Login</a></li>
+    <li><a href="book_room">BookRoom</a></li>
     <li class="icon">
         <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
     </li>

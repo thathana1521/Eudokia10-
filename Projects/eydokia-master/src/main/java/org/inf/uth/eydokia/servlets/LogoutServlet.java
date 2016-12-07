@@ -64,7 +64,7 @@ public class LogoutServlet extends HttpServlet
                 }
             }
 
-            request.getRequestDispatcher("/register_or_login.jsp")
+            request.getRequestDispatcher("/login_or_register.jsp")
                     .forward(request, response);
         }
         catch (Exception e)
