@@ -58,6 +58,7 @@ public class RegisterServlet extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        System.out.println("dasgfdsafg");
         String username =   request.getParameter("usernamesignup");
         String email =      request.getParameter("emailsignup");
         String password =   request.getParameter("passwordsignup");
@@ -65,6 +66,8 @@ public class RegisterServlet extends HttpServlet
         String fullName =  request.getParameter("fullnamesignup");
         String phone =      request.getParameter("phone");
         String extraInfo =  request.getParameter("infosignup");
+        
+        System.out.println("dasgfdsafg"+username +email +password +_password +fullName +phone +extraInfo);
         
         try (Connection conn = mDataSource.getConnection())
         {
@@ -94,10 +97,11 @@ public class RegisterServlet extends HttpServlet
             DSLContext create = DSL.using(conn, SQLDialect.MYSQL);
             
             UserRecord user = create.newRecord(USER);            
-            
+            System.out.println("Cr new r");
             UserRecord registered = create.selectFrom(USER)
                                                 .where(USER.USERNAME.eq(username))
                                         .fetchOne();
+             System.out.println("Cr select r");
             if (registered != null)
             {
                 throw new Exception("Username already exists.");
@@ -126,11 +130,13 @@ public class RegisterServlet extends HttpServlet
             user.setExtraInfo(extraInfo);
             
             user.store();
+             System.out.println("Cr store r");
             request.getSession().setAttribute("user", user);
             request.getRequestDispatcher("/calendar").forward(request, response);
         }
         catch (Exception e) 
         {
+            System.out.println(""+e);
             request.setAttribute("errorMsg", e.getMessage());
             request.getRequestDispatcher("/login_or_register.jsp")
                     .forward(request, response);

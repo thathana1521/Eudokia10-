@@ -57,7 +57,8 @@
                             
                         
                         <div id="register" class="animate form">
-                            <form action="${pageContext.request.contextPath}/login" method="post" autocomplete="on">
+                            <form action="${pageContext.request.contextPath}/register" method="post" autocomplete="on">
+                                
                                 <h1> Sign up </h1> 
                                 <p> 
                                     <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
@@ -77,15 +78,15 @@
                                 </p>
                                 <p> 
                                     <label for="fullnamesignup" data-icon="fn">Your Full Name</label><br>
-                                    <input type="text" id="fullnamesignup" required="required" placeholder="eg. Al Pacino">
+                                    <input type="text" id="fullnamesignup" name="fullnamesignup" required="required" placeholder="eg. Al Pacino">
                                 </p>
                                 <p> 
                                     <label for="phone" data-icon="fn">Phone</label><br>
-                                    <input type="text" id="phone" required="required" placeholder="eg. 6900000001">
+                                    <input type="text" id="phone" name="phone" required="required" placeholder="eg. 6900000001">
                                 </p>
                                 <p> 
                                     <label for="infosignup" data-icon="fn">Extra Info</label><br>
-                                    <input type="text" id="infosignup" required="required" placeholder="Extra information">
+                                    <input type="text" id="infosignup" name="infosignup" required="required" placeholder="Extra information">
                                 </p>
                                 <p class="signin button"> 
                                     <input type="submit" value="Sign up"/> 

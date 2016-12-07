@@ -94,6 +94,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>welcome.jsp</welcome-file>
+        <welcome-file>javaplanner.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
