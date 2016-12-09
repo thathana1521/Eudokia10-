@@ -16,7 +16,9 @@
         <%@ include file="/WEB-INF/jspf/header.jspf" %>
             
         <h2 class="error-msg">${requestScope.errorMsg}</h2>
-        <c:if test="${logged}">
+        <c:choose>
+            
+        <c:when test="${logged}">
             <p>Room:</p><select name="room_id" form="book_room">
                 <c:forEach var="room" items="${requestScope.rooms_list}"> 
                     <option value="${room.roomId}">${room.name}</option>
@@ -38,17 +40,20 @@
                 </fieldset>
             </form>
             <%@ include file="/WEB-INF/jspf/room_entries.jspf" %>
-        </body>
-    </c:if>
         
-    <c:if test="${!logged}">
         
-        <h1>You must be logged in to book a room.</h1>
-        <p>Please login</p>
-        <li><a href="${path}/login">here</a></li>
-        </c:if>
+        </c:when>
+        
+        <c:otherwise>
             
-            
+            <h1>You must be logged in to book a room.</h1>
+            <p>Please login</p>
+            <ul><li><a href="${path}/login">here</a></li></ul>
+            <br />
+                
+        </c:otherwise>
+        </c:choose>
+            </body>
 </html>
 
     
