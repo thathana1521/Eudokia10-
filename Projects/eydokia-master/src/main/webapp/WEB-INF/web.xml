@@ -40,6 +40,10 @@
         <servlet-class>org.inf.uth.eydokia.servlets.CalendarServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>CalendarNew</servlet-name>
+        <servlet-class>org.inf.uth.eydokia.servlets.CalendarNew</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>ProfileServlet</servlet-name>
         <servlet-class>org.inf.uth.eydokia.servlets.ProfileServlet</servlet-class>
     </servlet>
@@ -51,10 +55,7 @@
         <servlet-name>ModerateServlet</servlet-name>
         <servlet-class>org.inf.uth.eydokia.servlets.ModerateServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>EventsManager</servlet-name>
-        <servlet-class>com.dhtmlx.demo.EventsManager</servlet-class>
-    </servlet>
+
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -72,6 +73,10 @@
         <url-pattern>/calendar</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>CalendarNew</servlet-name>
+        <url-pattern>/calendarNew</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>BookRoomServlet</servlet-name>
         <url-pattern>/book_room</url-pattern>
     </servlet-mapping>
@@ -84,16 +89,13 @@
         <url-pattern>/profile</url-pattern>
         <url-pattern>/change_password</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>EventsManager</servlet-name>
-        <url-pattern>/event</url-pattern>
-    </servlet-mapping>
+  
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>javaplanner.jsp</welcome-file>
+        <welcome-file>welcome.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
