@@ -3,16 +3,46 @@
 <c:set var="path" scope="page" value="${pageContext.request.contextPath}"/>
 <c:set var="logged" scope="page" value="${sessionScope.user.userId > 0}"/>
 
+<head>
+            
+        <meta charset="UTF-8">
+ 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" 
+              href="${pageContext.request.contextPath}/css/main.css" />        
+    </head>
 <h1>Hello     
     <c:set var="username_link" scope="page" value="/login"/>
     <c:if test="${logged}">
         <c:set var="username_link" scope="page" value="/logout"/>
     </c:if>
     <a href="${path}${username_link}">
-        ${sessionScope.user.username} <c:if test="${logged}">(logout)</c:if>
+        ${sessionScope.user.username} 
     </a>
 </h1>
+
+
+    <div class="row">
+        <div class="col-md-5  toppad  pull-right-xs col-md-offset-9 ">
+            <A href="edit.html" >Edit Profile</A>
+             <c:choose>
+             <c:when test="${logged}">
+            <A href="${path}${username_link}">Logout</A>
+                 </c:when>
+                 <c:otherwise>
+                 <A href="${path}/login">Login</A>
+                 </c:otherwise>
+                 </c:choose>
+                <br>
+                <p id="demo"></p>
+                <script>
+                    document.getElementById("demo").innerHTML = Date();
+                </script>
+            </div>
+        </div>
     
+
 <ul>
     <c:if test="${logged}">
         <li><a href="${path}/profile?username=${sessionScope.user.username}">My requests</a></li>

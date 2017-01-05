@@ -31,11 +31,27 @@
             </select>
             <form action="${pageContext.request.contextPath}/book_room" method="post" id="book_room">
                 <fieldset>
-                    <input type="date" name="start_date"/>
-                    <input type="date" name="end_date"/>
-                    <input type="time" name="start_time" />
-                    <input type="time" name="end_time" />
-                    <input type="text" name="description" placeholder="Description" />
+                    <p> 
+                        <label for="startingDate" data-icon="sd">StartingDate (DD-MM-YYYY) </label><br>
+                        <input type="date" id="startingDate" name="start_date" required="required" >
+                    </p>
+                    <p> 
+                        <label for="endDate" data-icon="ed">EndingDate (DD-MM-YYYY)</label><br>
+                        <input type="date" id="endDate" name="end_date" required="required" >
+                    </p>
+                    <p> 
+                        <label for="startingTime" data-icon="st">StartingTime (HH:MM)</label><br>
+                        <input type="time" id="startingTime" name="start_time" required="required" >
+                    </p>
+                    <p> 
+                        <label for="endingTime" data-icon="et">EndingTIme (HH:MM)</label><br>
+                        <input type="time" id="endingTime" name="end_time" required="required" >
+                    </p>
+                    <p> 
+                        <label for="Description" data-icon="des">Descritpion</label><br>
+                        <input type="text" id="Description" name="description" required="required" >
+                    </p>
+      
                     <input type="submit" name="book" value="Book" />
                 </fieldset>
             </form>

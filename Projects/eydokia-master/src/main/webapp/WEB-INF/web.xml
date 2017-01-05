@@ -48,6 +48,10 @@
         <servlet-class>org.inf.uth.eydokia.servlets.ProfileServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>ChangePassword</servlet-name>
+        <servlet-class>org.inf.uth.eydokia.servlets.ChangePassword</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>BookRoomServlet</servlet-name>
         <servlet-class>org.inf.uth.eydokia.servlets.BookRoomServlet</servlet-class>
     </servlet>
@@ -87,6 +91,9 @@
     <servlet-mapping>
         <servlet-name>ProfileServlet</servlet-name>
         <url-pattern>/profile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChangePassword</servlet-name>
         <url-pattern>/change_password</url-pattern>
     </servlet-mapping>
   

@@ -22,6 +22,7 @@
         <button class="accordion">Aithousa A</button>
         <div class="panel">
             <p>Xaraktiristika aithousas A</p>
+            
         </div>
         <script src="${pageContext.request.contextPath}/js/Accordion/accordion.js"></script>
         

@@ -5,11 +5,12 @@
 <head>
    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
    <title>Mini calendar in the scheduler header</title>
-</head>
+
    <script src="codebase/dhtmlxscheduler.js" type="text/javascript" charset="utf-8"></script>
    <link rel="stylesheet" href="codebase/dhtmlxscheduler.css" type="text/css" media="screen" title="no title" charset="utf-8">
 
 	<script src="codebase/ext/dhtmlxscheduler_minical.js" type="text/javascript" charset="utf-8"></script>
+        <script src="codebase/ext/dhtmlxscheduler_recurring.js" type="text/javascript" charset="utf-8"></script>
    
 <style type="text/css" media="screen">
    html, body{
@@ -26,6 +27,13 @@
 		
 		scheduler.config.xml_date="%Y-%m-%d %H:%i";
 		scheduler.init('scheduler_here',new Date(),"week");
+                
+                scheduler.config.lightbox.sections = [
+    {name:"description", height:130, map_to:"text", type:"textarea" , focus:true},
+    {name:"recurring", type:"recurring", map_to:"rec_type", button:"recurring", 
+      form:"my_recurring_form"},
+    {name:"time", height:72, type:"time", map_to:"auto"}
+];
                 
 	}
 	
@@ -44,7 +52,7 @@
 			});
 	}
 </script>
-
+</head>
 <body onload="init();">
     <%@ include file="/WEB-INF/jspf/menu.jspf" %>
         <%@ include file="/WEB-INF/jspf/header.jspf" %>
@@ -64,4 +72,11 @@
       <div class="dhx_cal_data">
       </div>
    </div>
+   <script>
+       scheduler.init('scheduler_here', new Date(), "month");
+       scheduler.load("/calendarNew");
+       
+       var dp = new dataProcessor("/calendarNew");
+       dp.init(scheduler);
+       </script>
 </body>

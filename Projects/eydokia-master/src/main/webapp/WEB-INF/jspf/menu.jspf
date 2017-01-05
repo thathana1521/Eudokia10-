@@ -3,17 +3,18 @@
 
   
 <link type="text/css" rel="stylesheet" 
-              href="${pageContext.request.contextPath}/css/Menu.css" />
+              href="css/Menu.css" />
 
 <ul class="topnav" id="myTopnav">
     <li><a href="welcome.jsp">Home</a></li>
     <li><a href="calendar">Calendar</a></li>
     <li><a href="book_room">BookRoom</a></li>
     <li><a href="profile">Profile</a></li>
+    <li><a href="calendarNew">NewCalendar</a></li>
     <li class="icon">
         <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
     </li>
 </ul>
-<script src="${pageContext.request.contextPath}/js/menu/menu.js"></script>
+<script src="js/menu/menu.js"></script>
 
 

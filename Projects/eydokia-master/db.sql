@@ -148,6 +148,17 @@ CREATE TABLE IF NOT EXISTS `eydokia`.`entry` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `eydokia`.`events`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS  `eydokia`.`events` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `start_date` datetime NOT NULL,
+  `end_date` datetime NOT NULL,
+  `text` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+)
+
 CREATE INDEX `room_id_idx` ON `eydokia`.`entry` (`room_id` ASC);
 
 CREATE INDEX `user_id_idx` ON `eydokia`.`entry` (`user_id` ASC);

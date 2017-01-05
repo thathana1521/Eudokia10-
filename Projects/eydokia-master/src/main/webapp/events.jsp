@@ -1,4 +1,5 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@ page contentType="application/json" %>
 <%= getEvents(request) %>
 <%@ page import="com.dhtmlx.planner.*,com.dhtmlx.demo.*" %>
 <%!
